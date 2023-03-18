@@ -24,13 +24,13 @@ module.exports = () => {
       }),
       new MiniCssExtractPlugin(),
       new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
       new WebpackPwaManifest({
         // TODO: Create a manifest.json:
         name: "JATE Manifest ",
-        short_name: 'Manifest',
+        short_name: 'JATE',
         description: "Just another text editor!",
         //background_color: "#7eb4e2",
        // theme_color: "#7eb4e2",
@@ -38,9 +38,9 @@ module.exports = () => {
         //crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-          destination: path.join(src, )
+          destination: path.join('assets', 'icons')
           },
         ] 
       }),  
