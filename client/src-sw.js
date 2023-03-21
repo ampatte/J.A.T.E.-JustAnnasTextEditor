@@ -29,7 +29,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // TODO: Implement asset caching
 registerRoute(
   ({ request }) =>  request.destination === 'asset',
-  new StaleWhileRevalidate({
+  new CacheFirst({
     // Name of the cache storage.
     cacheName: 'asset-cache',
     plugins: [
@@ -44,3 +44,5 @@ registerRoute(
     ],
   })
 );
+
+offlineFallback();
