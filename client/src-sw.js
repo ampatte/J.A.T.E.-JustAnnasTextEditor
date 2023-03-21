@@ -28,7 +28,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
 registerRoute(
-  ({ request }) =>  request.destination === ['image', 'style', 'script', 'worker'],
+  ({ request }) =>  request.destination === ['image', 'style', 'script', 'worker'].includes(request.destination),
   new StaleWhileRevalidate({
     cacheName: 'asset-cache',
     plugins: [
@@ -43,4 +43,4 @@ registerRoute(
   })
 );
 
-offlineFallback();
+offlineFallback({fallbackURL: '/offline.html'});

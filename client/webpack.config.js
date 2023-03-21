@@ -7,7 +7,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
-    mode: 'development',
+    mode: 'production',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
@@ -32,7 +32,7 @@ module.exports = () => {
         description: "Just another text editor!",
         background_color: "#7eb4e2",
         theme_color: "#31a9e1",
-        start_url: "/",
+        start_url: "./",
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
