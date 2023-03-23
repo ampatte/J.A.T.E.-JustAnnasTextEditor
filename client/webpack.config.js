@@ -7,7 +7,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
-    mode: 'production',
+    mode: 'development',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
@@ -19,21 +19,21 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack Plugin',
+        title: 'J.A.T.E.',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         // TODO: Create a manifest.json:
-        name: "JATE Manifest ",
-        short_name: 'JATE',
-        description: "Just another text editor!",
+        name: "Just Another Text Editor",
+        short_name: 'J.A.T.E',
+        description: "text editor",
         background_color: "#7eb4e2",
         theme_color: "#31a9e1",
-        start_url: "./",
-        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
