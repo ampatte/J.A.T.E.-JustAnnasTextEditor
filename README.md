@@ -21,7 +21,7 @@
 
   ## Usage
   This app can be useful while studying or creating new projects by allowing a user to save and retrieve notes and code snippets, even with out internet.
-  ![alt text](Assets/images/2023-01-05 (2).png)
+  ![J.A.T.E.](assets/JATE.png)
   
   ## Contribution
   I am the only contributor.
